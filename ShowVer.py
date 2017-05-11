@@ -66,7 +66,7 @@ def main(screen):
    win.addstr(22,0,"          [ . ] = Switch probably rebooting")
    refresh() 
 
-   for x in range(numStudents):
+   for x in range(NumStudents):
       t = Thread(target=GetVersion, args=(x+1,))
       t.start()
 
