@@ -34,6 +34,17 @@ def GetVersion(x):
        elif ErrorCode == errno.ECONNRESET:
           win.addstr(x, verLoc, "Err " + str(ErrorCode) + ": Con RST ]          ")
           refresh() 
+       elif ErrorCode == errno.ETIMEDOUT:
+          # timed out
+          win.addstr(x, verLoc, "Err " + str(ErrorCode) + ": Timed Out ]          ")
+          refresh() 
+       elif ErrorCode == errno.ECONNREFUSED:
+          # timed out
+          win.addstr(x, verLoc, "Err " + str(ErrorCode) + ": Connection Refused ]          ")
+          refresh()
+       else:
+          win.addstr(x, verLoc, "Err " + str(ErrorCode) + ": Error Occured ]          ")
+          refresh() 
    else:
       win.addstr(x, verLoc, response[0]["version"] + " ]")
       memTotal = response[0]["memTotal"]
