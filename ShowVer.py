@@ -65,7 +65,7 @@ def refresh():
    # The sleep fixes threads mashing other threads cursor positions
    secs = random.uniform(0,0.5)
    time.sleep(secs)
-   win.addstr(22,0,"")
+   win.addstr(NumStudents+2,0,"")
    screen.refresh()
    win.refresh()
    # Since called in threads, each thread must endwin()
@@ -75,7 +75,7 @@ def main(screen):
 
    for x in range(NumStudents):   
       win.addstr(x+1,1,"Student-" + str(x+1).zfill(2) + "  EOS:[ . ]         Mem Used: [ . ]")
-   win.addstr(22,0,"          [ . ] = Switch probably rebooting")
+   win.addstr(NumStudents+2,0,"          [ . ] = Switch probably rebooting")
    refresh() 
 
    for x in range(NumStudents):
