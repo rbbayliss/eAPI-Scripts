@@ -14,7 +14,8 @@ from SiteVariables import *
 
 def GetVersion(x):
    verLoc = 19
-   IP = "10.0.0." + str(x)
+   # updated based on lab address allocation scheme
+   IP = "10.10.10." + str(x) + str(x)
    switch = Server( "https://" + ScriptUser + ":" + ScriptPass + "@" + IP + "/command-api" )
    # Results in Host Unreach never happening, but [ . ] means same thing 
    #         without waiting
